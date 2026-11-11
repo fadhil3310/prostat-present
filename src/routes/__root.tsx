@@ -19,10 +19,20 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'MISSION: PROBABILITY — An Among Us Statistical Investigation',
+      },
+      {
+        name: 'description',
+        content:
+          'Investigasi Statistik 4 Distribusi Probabilitas (Binomial, Poisson, Eksponensial, Normal) Berbasis Tema Among Us',
       },
     ],
     links: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/assets/among-us/characters/impostor-purple-kill.png',
+      },
       {
         rel: 'stylesheet',
         href: appCss,
@@ -39,9 +49,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <HeadContent />
       </head>
-      <body className="font-sans antialiased [overflow-wrap:anywhere] selection:bg-[rgba(79,184,178,0.24)]">
+      <body className="min-h-screen flex flex-col bg-[#070b14] text-slate-100 font-body antialiased [overflow-wrap:anywhere] selection:bg-cyan-500/30 selection:text-cyan-200">
         <Header />
-        {children}
+        <div className="flex-1">{children}</div>
         <Footer />
         <TanStackDevtools
           config={{

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
@@ -7,6 +7,20 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Among Us Sci-Fi HUD Tokens */
+  --au-space-void: #070b14;
+  --au-space-surface: #101b3d;
+  --au-space-card: rgba(23, 35, 71, 0.85);
+  --au-cyan: #35c9f4;
+  --au-purple: #8b5cf6;
+  --au-yellow: #ffd166;
+  --au-coral: #ff6b6b;
+  --au-mint: #55d6a5;
+  --au-terminal: #080e21;
+
+  --font-display: 'Fredoka', 'Baloo 2', system-ui, sans-serif;
+  --font-body: 'Poppins', ui-sans-serif, sans-serif;
+
   --sea-ink: #173a40;
   --sea-ink-soft: #416166;
   --lagoon: #4fb8b2;
@@ -345,3 +359,267 @@ a {
     color: var(--foreground);
   }
 }
+
+/* MISSION: PROBABILITY — Sci-Fi HUD Utilities */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.aspect-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.hud-glass-card {
+  background: var(--au-space-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(53, 201, 244, 0.22);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.hud-glass-card-interactive {
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.hud-glass-card-interactive:hover {
+  transform: translateY(-2px);
+  border-color: rgba(53, 201, 244, 0.55);
+  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.6), 0 0 18px rgba(53, 201, 244, 0.25);
+}
+
+.hud-terminal-container {
+  background: var(--au-terminal);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes float-astronaut {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.8deg);
+  }
+}
+
+.floating-crewmate {
+  animation: float-astronaut 4.5s ease-in-out infinite;
+}
+
+@keyframes victory-confetti-drift {
+  0% {
+    transform: translateY(-12vh) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(105vh) rotate(320deg);
+    opacity: 0;
+  }
+}
+
+.victory-confetti {
+  animation-name: victory-confetti-drift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes victory-spotlight-pulse {
+  0%, 100% {
+    opacity: 0.78;
+    transform: scaleX(1) scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.03) scaleY(1.06);
+  }
+}
+
+.victory-spotlight {
+  animation: victory-spotlight-pulse 4.2s ease-in-out infinite;
+}
+
+@keyframes victory-beam-expand {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.12) scaleY(0.02);
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+}
+
+.victory-beam-expand {
+  animation: victory-beam-expand 780ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes victory-center-reveal {
+  0% {
+    clip-path: inset(50% 0% 50% 0%);
+    transform: scale(0.95);
+    opacity: 0.25;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.victory-center-reveal {
+  animation: victory-center-reveal 860ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes victory-title-pop {
+  0% {
+    opacity: 0;
+    transform: scale(1.08) translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.victory-title-pop {
+  animation: victory-title-pop 700ms 120ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes victory-crew-emerge {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.86);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.victory-crew-emerge {
+  animation: victory-crew-emerge 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes victory-actions-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.victory-actions-reveal {
+  animation: victory-actions-reveal 520ms 580ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Smooth Scene & Slide Transitions */
+@keyframes scene-enter {
+  0% {
+    opacity: 0;
+    transform: scale(1.018);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scene-enter {
+  animation: scene-enter 580ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes slide-enter-forward {
+  0% {
+    opacity: 0;
+    transform: translate3d(36px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slide-enter-forward {
+  animation: slide-enter-forward 480ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes slide-enter-backward {
+  0% {
+    opacity: 0;
+    transform: translate3d(-36px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slide-enter-backward {
+  animation: slide-enter-backward 480ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes slide-header-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-header-enter {
+  animation: slide-header-enter 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Custom In-Game Scrollbar for Task Panels */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.45);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 209, 102, 0.75);
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.45) rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
