@@ -48,7 +48,7 @@ export const PRESENTATION_SLIDES: SlideMetadata[] = [
     roomName: 'Dropship Briefing Hatch',
     layoutType: 'standard',
     accentColor: '#55D6A5', // Mint
-    backgroundAsset: AMONG_US_ASSETS.backgrounds.deepSpace,
+    backgroundAsset: AMONG_US_ASSETS.backgrounds.electricalRoom,
     characterAsset: AMONG_US_ASSETS.characters.blueTablet,
     characterAlt: 'Crewmate Blue Reviewing Mission Data Tablet',
     implementationStatus: 'placeholder',
@@ -62,7 +62,7 @@ export const PRESENTATION_SLIDES: SlideMetadata[] = [
     roomName: 'Cafeteria The Skeld',
     layoutType: 'formula',
     accentColor: '#FF6B6B', // Coral Red
-    backgroundAsset: AMONG_US_ASSETS.backgrounds.deepSpace,
+    backgroundAsset: AMONG_US_ASSETS.backgrounds.amogus,
     characterAsset: AMONG_US_ASSETS.characters.redTask,
     characterAlt: 'Crewmate Red Executing Inspection Tasks',
     implementationStatus: 'ready',
@@ -76,7 +76,7 @@ export const PRESENTATION_SLIDES: SlideMetadata[] = [
     roomName: 'Admin Navigation Room',
     layoutType: 'formula',
     accentColor: '#FFD166', // Yellow
-    backgroundAsset: AMONG_US_ASSETS.backgrounds.deepSpace,
+    backgroundAsset: AMONG_US_ASSETS.backgrounds.ejectionSequence,
     characterAsset: AMONG_US_ASSETS.characters.yellowTablet,
     characterAlt: 'Crewmate Yellow Monitoring Signals',
     implementationStatus: 'ready',
@@ -90,7 +90,7 @@ export const PRESENTATION_SLIDES: SlideMetadata[] = [
     roomName: 'Electrical Room',
     layoutType: 'formula',
     accentColor: '#8B5CF6', // Purple
-    backgroundAsset: AMONG_US_ASSETS.backgrounds.deepSpace,
+    backgroundAsset: AMONG_US_ASSETS.backgrounds.cafeteria,
     characterAsset: AMONG_US_ASSETS.characters.purpleWires,
     characterAlt: 'Crewmate Purple Repairing Wires',
     implementationStatus: 'ready',
@@ -104,7 +104,7 @@ export const PRESENTATION_SLIDES: SlideMetadata[] = [
     roomName: 'Reactor Room — The Skeld',
     layoutType: 'formula',
     accentColor: '#35C9F4', // Cyan
-    backgroundAsset: AMONG_US_ASSETS.backgrounds.deepSpace,
+    backgroundAsset: AMONG_US_ASSETS.backgrounds.adminRoom,
     characterAsset: AMONG_US_ASSETS.characters.greenVent,
     characterAlt: 'Crewmate Green Calibrating Reactor Sensors',
     implementationStatus: 'ready',
@@ -118,7 +118,7 @@ export const PRESENTATION_SLIDES: SlideMetadata[] = [
     roomName: 'Security Room — The Skeld',
     layoutType: 'visualization',
     accentColor: '#55D6A5', // Mint Security Scan
-    backgroundAsset: AMONG_US_ASSETS.backgrounds.deepSpace,
+    backgroundAsset: AMONG_US_ASSETS.backgrounds.reactorRoom,
     characterAsset: AMONG_US_ASSETS.characters.redAlibi,
     characterAlt: 'Crewmate Red Cross-Referencing Crew Logs',
     implementationStatus: 'ready',
@@ -132,7 +132,7 @@ export const PRESENTATION_SLIDES: SlideMetadata[] = [
     roomName: 'Data Lab — The Skeld',
     layoutType: 'comparison',
     accentColor: '#35C9F4', // Data Lab Cyan
-    backgroundAsset: AMONG_US_ASSETS.backgrounds.deepSpace,
+    backgroundAsset: AMONG_US_ASSETS.backgrounds.dropshipLobby,
     characterAsset: AMONG_US_ASSETS.characters.blueDoors,
     characterAlt: 'Crewmate Blue Accessing Data Records',
     implementationStatus: 'ready',
@@ -146,7 +146,7 @@ export const PRESENTATION_SLIDES: SlideMetadata[] = [
     roomName: 'Cafeteria — The Skeld',
     layoutType: 'emergency-meeting',
     accentColor: '#FF6B6B', // Coral Red
-    backgroundAsset: AMONG_US_ASSETS.backgrounds.deepSpace,
+    backgroundAsset: AMONG_US_ASSETS.backgrounds.amogusGif,
     characterAsset: AMONG_US_ASSETS.characters.whiteVoting,
     characterAlt: 'Crewmate White Casting Vote',
     implementationStatus: 'ready',
@@ -160,7 +160,7 @@ export const PRESENTATION_SLIDES: SlideMetadata[] = [
     roomName: 'Command Bridge — The Skeld',
     layoutType: 'conclusion',
     accentColor: '#35C9F4', // Among Us Academic Cyan
-    backgroundAsset: AMONG_US_ASSETS.backgrounds.deepSpace,
+    backgroundAsset: AMONG_US_ASSETS.backgrounds.electricalRoom,
     characterAsset: AMONG_US_ASSETS.characters.whiteVoting,
     characterAlt: 'Crewmate Cyan Presenting Research Conclusion',
     implementationStatus: 'ready',

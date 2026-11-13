@@ -158,7 +158,10 @@ export default function PresentationShell() {
     if (currentScene === 'role-reveal') {
       return (
         <RoleRevealScreen
-          onContinue={() => navigateScene('presentation', 1)}
+          onContinue={() => {
+            navigateScene('presentation', 1)
+             new Audio("/shinese-gong.mp3").play();
+          }}
           onBackToLobby={() => navigateScene('lobby')}
         />
       )

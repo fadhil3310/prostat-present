@@ -10,8 +10,8 @@ interface RoleRevealScreenProps {
 const ROLE_REVEAL_CREW: CrewmateStageMember[] = [
   {
     src: AMONG_US_ASSETS.characters.blueEmergency,
-    alt: 'Ahmad — Lime Crewmate',
-    name: 'Ahmad',
+    alt: 'Fadhil — Lime Crewmate',
+    name: 'Fadhil',
     heightClass: 'h-24 sm:h-32 md:h-36',
     zIndex: 20,
     delay: '240ms',
@@ -19,8 +19,8 @@ const ROLE_REVEAL_CREW: CrewmateStageMember[] = [
   },
   {
     src: AMONG_US_ASSETS.characters.whiteVoting,
-    alt: 'Fadhil — Cyan Crewmate',
-    name: 'Fadhil',
+    alt: 'Ahmad — Cyan Crewmate',
+    name: 'Ahmad',
     heightClass: 'h-28 sm:h-36 md:h-44',
     zIndex: 30,
     delay: '160ms',
@@ -52,6 +52,10 @@ export default function RoleRevealScreen({
   onContinue,
   onBackToLobby,
 }: RoleRevealScreenProps) {
+  useEffect(() => {
+     new Audio("/role-reveal.mp3").play();
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Enter' || e.key === ' ' || e.code === 'Space') {

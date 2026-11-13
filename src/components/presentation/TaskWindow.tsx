@@ -46,7 +46,7 @@ export default function TaskWindow({
               className="h-2.5 w-2.5 rounded-full transition-colors duration-300"
               style={{
                 backgroundColor: currentSlide.accentColor,
-                boxShadow: `0 0 8px ${currentSlide.accentColor}`,
+                // boxShadow: `0 0 8px ${currentSlide.accentColor}`,
               }}
             />
             <span className="font-display text-xs font-bold uppercase tracking-wider text-white">

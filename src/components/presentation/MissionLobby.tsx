@@ -44,7 +44,7 @@ export default function MissionLobby({
     <div
       className="fixed inset-0 z-50 flex h-screen w-screen flex-col items-center justify-between overflow-hidden bg-[#070b14] bg-cover bg-center bg-no-repeat select-none p-3 sm:p-5 md:p-6"
       style={{
-        backgroundImage: `url(${AMONG_US_ASSETS.backgrounds.deepSpace})`,
+        backgroundImage: `url(${AMONG_US_ASSETS.backgrounds.lobbyA})`,
       }}
       role="region"
       aria-label="Scene 03: The Skeld Mission Lobby"

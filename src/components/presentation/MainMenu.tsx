@@ -1,29 +1,32 @@
-import { useState, useEffect } from 'react'
-import { AMONG_US_ASSETS } from '../../lib/amongUsAssets'
-import { playUiSfx, usePresentationSettings } from '../../lib/presentationSettings'
-import AssetSlot from './AssetSlot'
-import HowToPlayModal from './HowToPlayModal'
-import SettingsModal from './SettingsModal'
+import { useState, useEffect, useRef } from "react";
+import { AMONG_US_ASSETS } from "../../lib/amongUsAssets";
+import {
+  playUiSfx,
+  usePresentationSettings,
+} from "../../lib/presentationSettings";
+import AssetSlot from "./AssetSlot";
+import HowToPlayModal from "./HowToPlayModal";
+import SettingsModal from "./SettingsModal";
 
 interface MainMenuProps {
-  onStartMission: () => void
+  onStartMission: () => void;
 }
 
 export default function MainMenu({ onStartMission }: MainMenuProps) {
-  const [isHowToPlayOpen, setIsHowToPlayOpen] = useState<boolean>(false)
-  const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false)
-  const { settings } = usePresentationSettings()
+  const [isHowToPlayOpen, setIsHowToPlayOpen] = useState<boolean>(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
+  const { settings } = usePresentationSettings();
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search)
-      if (params.get('settings') === '1') {
-        setIsSettingsOpen(true)
-      } else if (params.get('howtoplay') === '1') {
-        setIsHowToPlayOpen(true)
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("settings") === "1") {
+        setIsSettingsOpen(true);
+      } else if (params.get("howtoplay") === "1") {
+        setIsHowToPlayOpen(true);
       }
     }
-  }, [])
+  }, []);
 
   return (
     <div
@@ -34,10 +37,11 @@ export default function MainMenu({ onStartMission }: MainMenuProps) {
       role="region"
       aria-label="Scene 02: Among Us Main Menu"
     >
+
       {/* Background Dimmer */}
       <div
         className={`absolute inset-0 pointer-events-none transition-colors duration-300 ${
-          settings.highContrastDimmer ? 'bg-black/70' : 'bg-black/40'
+          settings.highContrastDimmer ? "bg-black/70" : "bg-black/40"
         }`}
       />
 
@@ -77,8 +81,8 @@ export default function MainMenu({ onStartMission }: MainMenuProps) {
         <button
           type="button"
           onClick={() => {
-            playUiSfx('click')
-            onStartMission()
+            playUiSfx("click");
+            onStartMission();
           }}
           className="group relative flex w-full items-center justify-center gap-3 rounded-2xl border-4 border-black bg-[#EA2212] px-6 py-4 sm:py-4.5 font-display text-lg sm:text-2xl font-black uppercase tracking-wider text-white shadow-[0_6px_0_#000,0_12px_24px_rgba(0,0,0,0.6)] transition-all hover:bg-[#ff3b2d] active:translate-y-1 active:shadow-[0_2px_0_#000] cursor-pointer"
           autoFocus
@@ -96,8 +100,8 @@ export default function MainMenu({ onStartMission }: MainMenuProps) {
         <button
           type="button"
           onClick={() => {
-            playUiSfx('click')
-            setIsHowToPlayOpen(true)
+            playUiSfx("click");
+            setIsHowToPlayOpen(true);
           }}
           className="flex w-full items-center justify-center gap-2.5 rounded-2xl border-4 border-black bg-[#1e2430] px-6 py-3 sm:py-3.5 font-display text-base sm:text-lg font-bold uppercase tracking-wider text-white shadow-[0_5px_0_#000,0_8px_16px_rgba(0,0,0,0.5)] transition-all hover:bg-[#283142] active:translate-y-1 active:shadow-[0_2px_0_#000] cursor-pointer"
         >
@@ -109,8 +113,8 @@ export default function MainMenu({ onStartMission }: MainMenuProps) {
         <button
           type="button"
           onClick={() => {
-            playUiSfx('click')
-            setIsSettingsOpen(true)
+            playUiSfx("click");
+            setIsSettingsOpen(true);
           }}
           className="flex w-full items-center justify-center gap-2.5 rounded-2xl border-4 border-black bg-[#1e2430] px-6 py-3 sm:py-3.5 font-display text-base sm:text-lg font-bold uppercase tracking-wider text-white shadow-[0_5px_0_#000,0_8px_16px_rgba(0,0,0,0.5)] transition-all hover:bg-[#283142] active:translate-y-1 active:shadow-[0_2px_0_#000] cursor-pointer"
         >
@@ -122,8 +126,13 @@ export default function MainMenu({ onStartMission }: MainMenuProps) {
       {/* Bottom Footer Info Strip */}
       <div className="relative z-10 flex w-full items-center justify-between px-2 text-[10px] sm:text-xs font-mono text-slate-400">
         <div>
-          <span className="font-display font-bold text-slate-300">v1.0.0-academic</span>
-          <span className="hidden sm:inline text-slate-500"> // The Skeld Expedition</span>
+          <span className="font-display font-bold text-slate-300">
+            v1.0.0-academic
+          </span>
+          <span className="hidden sm:inline text-slate-500">
+            {" "}
+            // The Skeld Expedition
+          </span>
         </div>
         <div className="text-right">
           <span className="text-slate-400">
@@ -143,6 +152,5 @@ export default function MainMenu({ onStartMission }: MainMenuProps) {
         onClose={() => setIsSettingsOpen(false)}
       />
     </div>
-  )
+  );
 }
-

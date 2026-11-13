@@ -17,8 +17,8 @@ export interface CrewmateStageMember {
 export const VICTORY_TEAM_CREWMATES: CrewmateStageMember[] = [
   {
     src: AMONG_US_ASSETS.characters.blueEmergency,
-    alt: 'Ahmad — Lime Crewmate',
-    name: 'Ahmad',
+    alt: 'Fadhil — Lime Crewmate',
+    name: 'Fadhil',
     heightClass: 'h-28 sm:h-36 md:h-40',
     zIndex: 20,
     delay: '260ms',
@@ -26,8 +26,8 @@ export const VICTORY_TEAM_CREWMATES: CrewmateStageMember[] = [
   },
   {
     src: AMONG_US_ASSETS.characters.whiteVoting,
-    alt: 'Fadhil — Cyan Crewmate',
-    name: 'Fadhil',
+    alt: 'Ahmad — Cyan Crewmate',
+    name: 'Ahmad',
     heightClass: 'h-32 sm:h-40 md:h-48',
     zIndex: 30,
     delay: '160ms',

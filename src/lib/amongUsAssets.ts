@@ -17,6 +17,10 @@ export const AMONG_US_ASSETS = {
     electricalRoom: '/assets/among-us/backgrounds/skeld-electrical-room.jpg',
     reactorRoom: '/assets/among-us/backgrounds/skeld-reactor-core-room.jpg',
     ejectionSequence: '/assets/among-us/backgrounds/space-ejection-sequence.png',
+    lobbyA: '/assets/among-us/backgrounds/lobby-1.jpg',
+    amogus: '/assets/among-us/backgrounds/amogus.jfif',
+    amogusGif: '/assets/among-us/backgrounds/amogus.gif',
+    sus: '/assets/among-us/backgrounds/sus.gif'
   },
 
   // Karakter Resmi Crewmate & Impostor (Transparent PNG / WebP)
